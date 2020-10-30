@@ -1,0 +1,88 @@
+%% Benjamin Williams <bwilliams@lincoln.ac.uk>
+%% Get in touch if you have any questions or problems!
+%% University of Lincoln Computer Science Thesis Template
+
+%% @version     1.0.4
+%% @lastchanged 12th June 2020
+
+% The document class -- remove [harvard] if you want
+% numeric-style referencing.
+\documentclass[harvard]{lincolncsthesis}
+
+% Custom packages that you need to include
+\input{preamble/packages.tex}
+
+% Your thesis details -- edit the file at the path below
+% so it shows your name, title, etc. 
+\input{preamble/thesis-details.tex}
+
+% Set up the bib files which are gonna be used
+% throughout this document
+\input{preamble/bib-setup.tex}
+
+
+
+\begin{document}
+
+% start of document
+% --------------------------
+
+% Make the title. You can pass an option to this
+% to render the title differently, like so:
+%\maketitle[logo-first]
+\maketitle
+
+% And so begins the thesis! First include pages
+% before the acknowledgements
+\input{chapters/blank-pages.tex}
+
+% Acknowledgements
+\input{chapters/acknowledgements.tex}
+
+% The abstract of the thesis
+\input{chapters/abstract.tex}
+
+% Print out the table of tables and table of figures and
+% tell the template we're about to start the body of the
+% thesis.
+\thesisTables
+\thesisBodyStart
+
+
+% start of thesis body
+% ---------------------------
+
+% Include introduction
+\chapter{Introduction}
+\input{chapters/introduction.tex}
+
+% Related work 
+\chapter{Related Work}
+\input{chapters/related-work.tex}
+
+% Method
+\chapter{Method}
+\input{chapters/method.tex}
+
+% Conclusions
+\chapter{Conclusions}
+\input{chapters/conclusions.tex}
+
+
+% end of thesis body
+% --------------------------
+
+% Print out the references
+\printReferences
+
+% Print out the ludography (optional)
+\printLudography
+
+% If you want to put some text before the list of games,
+% then you can use the following code:
+%\begin{ludography}[Ludography / Optional Title]
+    %Here are some games.
+%\end{ludography}
+
+
+\end{document}

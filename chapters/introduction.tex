@@ -1,0 +1,65 @@
+\section{Some notes}
+It is worth noting that this document is an \textbf{unofficial} thesis template for the University of Lincoln School of Computer Science. It is also worth noting that this template is only suitable for the preparation of postgraduate research theses, and does not conform to the standards for undergraduate dissertations. This isn't endorsed by the institution, or the school -- a decent template was needed for my thesis, so I made this. Then, other people liked it and decided to use it. Along the way, I've added in small features which people have suggested. If you have any suggestions or issues, please contact me at \texttt{bwilliams@lincoln.ac.uk}! The following subsection in this document demonstrates some capabilities of the template (such as setting your thesis title, and so forth). I have not covered how to use \LaTeX, as this assumes a working knowledge of the language.
+
+If you are from another institution, then I want to thank you for your interest in my template! I've tried to make the template as lightweight as possible so you can modify it to your needs. You can easily swap out the logo (by changing logo.pdf or using \textbackslash thesisLogoPath) and customise the title page contents using the commands listed on the next page. The template is also lightweight enough to enable you to change the typeface of the entire document. Again, if you have any questions (even if you're not from Lincoln) please drop me an email as I love hearing your stories!
+
+\section{Definable variables}
+The \texttt{lincolncsthesis} template has a number of definable variables which can be redefined to change the format of the thesis. These are listed below (on the next page).
+
+\vspace{1cm}
+\begin{longtable}{l|p{1.3in}|l}
+    \bfseries Command & \bfseries Description & \bfseries Example  \\ \hline
+    \textbackslash thesisLogoPath & Sets the path to the logo for the title. & \textbackslash thesisLogoPath\{img/your-logo-here.jpg\}  \\
+    \textbackslash thesisSubmissionDate & Manually sets the submission date of the thesis, for the title page. & \textbackslash thesisSubmissionDate\{July, 2019\}  \\
+    \textbackslash thesisDegree & Sets the name of the degree for this thesis. & \textbackslash thesisDegree\{Doctor of Philosophy\}  \\
+    \textbackslash thesisProgramme & Sets the name of your degree programme/subject. & \textbackslash thesisProgramme\{Biology\}  \\
+    \textbackslash thesisSupervisor & Sets the name of your supervisor (optional). & \textbackslash thesisSupervisor\{Dr. Mantis Toboggan\}  \\
+    \textbackslash thesisSecondSupervisor & Sets the name of your second supervisor (optional). & \textbackslash thesisSecondSupervisor\{Dr. Mantis Toboggan\}  \\
+    \textbackslash thesisThirdSupervisor & Sets the name of your third supervisor (optional). & \textbackslash thesisThirdSupervisor\{Dr. Mantis Toboggan\}  \\
+%    \textbackslash thesisStudentNumber & Sets your student number (optional). & \textbackslash thesisStudentNumber\{ABC1234567\}  \\
+    %\textbackslash thesisModuleCode & Sets your module code for dissertation theses (optional). & \textbackslash thesisModuleCode\{CMP3000M\}  \\
+    \textbackslash thesisSchool & Sets the name of your school. & \textbackslash thesisSchool\{School of Chemistry\}  \\
+    \textbackslash thesisCollege & Sets the name of your college. & \textbackslash thesisCollege\{College of Science\}  \\
+    \textbackslash thesisUniversity & Sets the name of your university. & \textbackslash thesisUniversity\{University of Lincoln\}  \\
+\end{longtable}
+
+In addition, \texttt{\textbackslash thesisSubmissionText\{text\}} overrides the submission statement text, so you can type whatever you'd like onto the front page. This is optional, though.
+
+\section{Making the title page}
+To make the title, you just need to write \texttt{\textbackslash maketitle} at the beginning of your document, like any other \LaTeX~document. You can alternatively pass the optional argument \texttt{[logo-first]} to render the title page with the logo on top, like some thesis styles. 
+
+To do this, just write \texttt{\textbackslash maketitle[logo-first]} in place of \texttt{\textbackslash maketitle}.
+
+\section{Testing some math}
+Here are two equations:
+
+\begin{align}
+a &= b + 1 \\
+\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi
+&= -i\hbar \frac{\partial\Psi}{\partial t}    
+\end{align}
+
+
+And here is some text with some nice inline math, $(x, y)$ wow $\gamma$ so cool $\rho$.
+
+
+\section{Undergraduate theses}
+Currently, this template is set up for use with postgraduate research theses, and does \textbf{not} conform to the standard of undergraduate dissertations. However, the template can be modified fairly easily to conform to these standards. But I am not responsible for ensuring your thesis matches your required submission standard. The purpose of this template is to instead provide a good guide for formatting your thesis.
+
+\section{Referencing}
+If you have included \texttt{[harvard]} in the document class command, then you will be able to cite things inline with parentheses. You can do this by using \texttt{\textbackslash citep\{citekey\}}. It will print out something like this \citep{aad2012observation}. Or alternatively, you can use \texttt{\textbackslash cite\{citekey\}} to cite things like this \cite{chatrchyan2012observation}. If you wish to use numeric style citing, just remove the \texttt{[harvard]} option from the \texttt{\textbackslash documentclass} command.
+
+If you are writing an postgraduate thesis (at Lincoln) it is worth noting that the standard for referencing is Harvard, so you will not need to change this option. However, please double and triple check this to make sure you are using the correct referencing style. Also, ask your supervisor and see which they prefer. This template uses Bib\LaTeX~for referencing, with a Biber backend. This is primarily due to the extensive features Bib\LaTeX~provides, along with the option of glossaries. If you want to customise the referencing style, you can either modify the template slightly to use different options, or use \texttt{\textbackslash usepackage} again to reimport it. There's probably some commands to change its options after its been imported too.
+
+\subsection{Ludography}
+This thesis template also contains an optional ludography. To use this, just put references into your bib file as usual with the game's details. Then, make sure \texttt{keywords} is set to \texttt{\{game\}}. This is what is used to determine which references are games, and which are actual papers. For a more elaborate example, see \texttt{bib/ludography.bib}.
+
+Also, make sure that the \texttt{title} key is actually the author of the game, and the \texttt{author} is the title of the game. The reason this is swapped around is because Bib\LaTeX~likes to print references out with the author first.
+
+Then, just add \texttt{\textbackslash printLudography} with an optional title argument to print out all citations like \texttt{\textbackslash printLudography} or \texttt{\textbackslash printLudography[Games]}.
+
+You can also use the \texttt{ludography} environment if you wish to print out some text before the list of games is printed. An example of this can be seen in \texttt{main.tex}.
+
+To cite games, you can \texttt{\textbackslash cite} it like any other reference. However, if you want it to display the title instead of the standard referencing style, you can use \texttt{\textbackslash citeGame} instead.
+
+Here is an example of a cited game with a normal reference style: ~\cite{spaceinvaders}. Ugh, pretty ugly. Instead, here the two are  cited in the next sentence as games with \texttt{\textbackslash citeGame}. Both \citeGame{spaceinvaders} and \citeGame{breakout} were games made by Atari. Much better!
